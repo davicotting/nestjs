@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: nest-clean-pg
+    image: bitnami/postgresql:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: docker
+      POSTGRESQL_DATABASE: nest-clean
+    volumes:
+      - postgres_data:/bitnami/postgresql
+
+volumes:
+  postgres_data:
